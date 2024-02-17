@@ -17,10 +17,15 @@ import TemplateContent from './sidebar/TemplateContent';
 import TextContent from './sidebar/TextContent';
 import UploadContent from './sidebar/UploadContent';
 import VideoContent from './sidebar/VideoContent';
+import DisplayCurriculum from './sidebar/CurriculumContent';
 
 const tabs = [
   {
     name: 'Template',
+    icon: <LayoutIcon />,
+  },
+  {
+    name: 'Curriculum',
     icon: <LayoutIcon />,
   },
   {
@@ -52,7 +57,7 @@ const tabs = [
     icon: <UploadIcon />,
   },
 ];
-const Sidebar = () => {
+const Sidebar = ({curriculum}) => {
   const { actions } = useEditor();
   const [tab, setTab] = useState<string | null>(null);
   return (
@@ -94,6 +99,15 @@ const Sidebar = () => {
           >
             {tab === 'Template' && (
               <TemplateContent
+                onClose={() => {
+                  setTab(null);
+                  actions.setSidebar();
+                }}
+              />
+            )}
+            {tab === 'Curriculum' && curriculum && (
+              <DisplayCurriculum
+                curriculum={curriculum}
                 onClose={() => {
                   setTab(null);
                   actions.setSidebar();
@@ -173,5 +187,7 @@ const Sidebar = () => {
     </div>
   );
 };
+
+
 
 export default Sidebar;
