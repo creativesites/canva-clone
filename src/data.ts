@@ -37,7 +37,7 @@ export const data = [
       '6b774af9-623d-41b7-9daa-fa7f392be460': {
         type: { resolvedName: 'TextLayer' },
         props: {
-          text: '<p style="font-family: Chewy; color: rgb(0, 0, 0); font-size: 42px; text-align: center; line-height: 1.4; letter-spacing: 0em;"><strong>LIQUID</strong></p><p style="font-family: Chewy; color: rgb(0, 0, 0); font-size: 42px; text-align: center; line-height: 1.4; letter-spacing: 0;"><strong>DESIGN EDITOR</strong></p>',
+          text: '<p style="font-family: Chewy; color: rgb(0, 0, 0); font-size: 42px; text-align: center; line-height: 1.4; letter-spacing: 0em;"><strong>CourScribe</strong></p><p style="font-family: Chewy; color: rgb(0, 0, 0); font-size: 42px; text-align: center; line-height: 1.4; letter-spacing: 0;"><strong></strong></p>',
           position: { x: 527.1390728476821, y: 243.582179409994 },
           boxSize: {
             width: 536.3009995574356,
@@ -69,7 +69,7 @@ export const data = [
       'fb5dfcaf-65c8-4ce1-90f4-23ab1e65052b': {
         type: { resolvedName: 'TextLayer' },
         props: {
-          text: '<p style="font-family: Oswald; color: rgb(0, 0, 0); font-size: 18px; text-transform: uppercase; text-align: center; line-height: 1.4; letter-spacing: 0;"><strong>DEVELOPED WITH REACTJS</strong></p>',
+          text: '<p style="font-family: Oswald; color: rgb(0, 0, 0); font-size: 18px; text-transform: uppercase; text-align: center; line-height: 1.4; letter-spacing: 0;"><strong>Edit Here</strong></p>',
           position: { x: 660.2715231788078, y: 440.2251655629139 },
           boxSize: {
             width: 261.91666666666606,
@@ -108,7 +108,7 @@ export const data = [
       '812d60e6-fa51-43f6-ac5e-53a536d5a74b': {
         type: { resolvedName: 'TextLayer' },
         props: {
-          text: '<p style="font-family: Oswald; color: rgb(0, 0, 0); font-size: 18px; text-transform: uppercase; text-align: center; line-height: 1.4; letter-spacing: 0;"><strong>DISCORD: https://discord.gg/mBj7fqKpEM</strong></p>',
+          text: '<p style="font-family: Oswald; color: rgb(0, 0, 0); font-size: 18px; text-transform: uppercase; text-align: center; line-height: 1.4; letter-spacing: 0;"><strong>DISCORD</strong></p>',
           position: { x: 587.4569536423838, y: 839.8609271523178 },
           boxSize: {
             width: 379.3868653421627,
@@ -147,7 +147,7 @@ export const data = [
       '1e68d85b-0be1-40de-b63b-2f394ce622e2': {
         type: { resolvedName: 'TextLayer' },
         props: {
-          text: '<p style="font-family: Oswald; color: rgb(0, 0, 0); font-size: 18px; text-transform: uppercase; text-align: center; line-height: 1.4; letter-spacing: 0;"><strong>CONTACT: DUYANH980@GMAIL.COM</strong></p>',
+          text: '<p style="font-family: Oswald; color: rgb(0, 0, 0); font-size: 18px; text-transform: uppercase; text-align: center; line-height: 1.4; letter-spacing: 0;"><strong></strong></p>',
           position: { x: 634.1125827814567, y: 810.4900662251654 },
           boxSize: {
             width: 293.4994481236197,

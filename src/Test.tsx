@@ -12,6 +12,7 @@ import { useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { ErrorBoundary } from "react-error-boundary";
 import { Preview } from '@lidojs/design-editor';
+import { useEditor } from '@lidojs/design-editor';
 
 function fallbackRender({ error, resetErrorBoundary }) {
   // Call resetErrorBoundary() to reset the error boundary and retry the render.
@@ -28,6 +29,7 @@ function fallbackRender({ error, resetErrorBoundary }) {
 const sampleData = [{"layers":{"ROOT":{"type":{"resolvedName":"RootLayer"},"props":{"boxSize":{"width":1640,"height":924},"position":{"x":0,"y":0},"rotate":0,"color":"rgb(255, 255, 255)","image":null},"locked":false,"child":["48b6c9d4-4803-49c7-8a27-579fc9aa9be6","e8364cc3-8336-4889-b16e-4ba91816ae27","d486d61f-f1fa-43a3-8e52-7cd1b169476d","58e83d9c-235c-4b80-8652-5b5e5cab24f4"],"parent":null},"48b6c9d4-4803-49c7-8a27-579fc9aa9be6":{"type":{"resolvedName":"ShapeLayer"},"props":{"shape":"rectangle","position":{"x":-41,"y":652},"boxSize":{"width":1766,"height":296,"x":-41,"y":652},"rotate":0,"color":"rgb(253, 235, 207)"},"locked":false,"child":[],"parent":"ROOT"},"e8364cc3-8336-4889-b16e-4ba91816ae27":{"type":{"resolvedName":"TextLayer"},"props":{"text":"<p style=\"text-align: center;font-family: Roboto;font-size: 68px;color: rgb(0, 0, 0);line-height: 1.4;letter-spacing: 0em;\"><strong><span style=\"color: rgb(0, 0, 0);\">Learn gardening edited</span></strong></p>","position":{"x":143.35990744542556,"y":39.96055778837237},"boxSize":{"width":879.4570588425272,"height":95,"x":143.35990744542568,"y":39.96055778837237},"scale":1,"rotate":0,"fonts":[{"name":"Roboto","fonts":[{"style":"Bold","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Bold.woff2"]},{"style":"Bold_Italic","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Bold.woff2"]},{"style":"Bold","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Bold.woff2"]},{"urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Regular.woff2"]},{"style":"Italic","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Regular.woff2"]},{"urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Regular.woff2"]}]}],"colors":["rgb(0, 0, 0)"],"fontSizes":[68]},"locked":false,"child":[],"parent":"ROOT"},"d486d61f-f1fa-43a3-8e52-7cd1b169476d":{"type":{"resolvedName":"TextLayer"},"props":{"text":"<p style=\"text-align: center;font-family: Roboto;font-size: 38px;color: rgb(0, 0, 0);line-height: 1.4;letter-spacing: 0em;\"><strong><span style=\"color: rgb(0, 0, 0);\">to teach basic gardening skills</span></strong></p>","position":{"x":263.1837958499592,"y":153.96927618418755},"boxSize":{"width":666.4143387030329,"height":53,"x":356.1218952396715,"y":199.72341742219976},"scale":1,"rotate":0,"fonts":[{"name":"Roboto","fonts":[{"style":"Bold","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Bold.woff2"]},{"style":"Bold_Italic","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Bold.woff2"]},{"style":"Bold","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Bold.woff2"]},{"urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Regular.woff2"]},{"style":"Italic","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Regular.woff2"]},{"urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Regular.woff2"]}]}],"colors":["rgb(0, 0, 0)"],"fontSizes":[38]},"locked":false,"child":[],"parent":"ROOT"},"58e83d9c-235c-4b80-8652-5b5e5cab24f4":{"type":{"resolvedName":"TextLayer"},"props":{"text":"<p style=\"text-align: center;font-family: Roboto;font-size: 68px;color: rgb(0, 0, 0);line-height: 1.4;letter-spacing: 0em;\"><strong><span style=\"color: rgb(0, 0, 0);\">tgfvhf dhgcdghdcfyfd</span></strong></p>","position":{"x":160.51771040968026,"y":327.3537574396366},"boxSize":{"width":536.3009995574356,"height":95,"x":523.1390728476821,"y":259.9867549668875},"scale":1,"rotate":0,"fonts":[{"name":"Roboto","fonts":[{"style":"Bold","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Bold.woff2"]},{"style":"Bold_Italic","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Bold.woff2"]},{"style":"Bold","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Bold.woff2"]},{"urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Regular.woff2"]},{"style":"Italic","urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Regular.woff2"]},{"urls":["https://lidojs-fonts.s3.us-east-2.amazonaws.com/Roboto/Roboto-Regular.woff2"]}]}],"colors":["rgb(0, 0, 0)"],"fontSizes":[68]},"locked":false,"child":[],"parent":"ROOT"}}}]
 
 const Test = () => {
+  //const { actions, query } = useEditor();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const leftSidebarRef = useRef<HTMLDivElement>(null);
@@ -43,86 +45,118 @@ const Test = () => {
   const [showView, setShowView] = useState(false);
   const [editView, setEditView] = useState(false);
   const curriculumId = queryParams.get('id')??null;
+  useEffect(() => {
+    //actions.setData(courscribeSampleData);
+}, [])
+  const getGoogleAuthUser = async (token) => {
+    try {
+      const res = await axios.get('http://64.4.160.24:1337/strapi-google-auth/me', {
+      headers: {
+          authorization: `Bearer ${token}`
+        }
+      })
+      return res.data
+    } catch (error) {
+      console.log('google auth user error', error)
+      return null
+    }
+  }
+  const getStrapiUser = async (token) => {
+    try {
+      const response = await fetch(`http://64.4.160.24:1337/api/users/me`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      if (!response.ok) throw new Error('Failed to fetch Strapi user');
+      return response.json();
+    } catch (error) {
+      console.error('Error fetching Strapi user:', error);
+      return null;
+    }
+  };
+  
+  const handleAuthorization = async (token, role, transformedCurriculum, action, id) => {
+    let user = {}
+    const userResp = await getGoogleAuthUser(token) || await getStrapiUser(token);
+    console.log('user', user)
+    if (!userResp ) {
+      // showAuthorizationError();
+      // return;
+      //@ts-ignore
+      user.id = id
+    }
+    user = userResp
+  
+    setCurriculumState(user, transformedCurriculum, role, action, token);
+  };
+  
+  const setCurriculumState = (user, transformedCurriculum, role, action, token) => {
+    const curriculum = JSON.parse(transformedCurriculum);
+    setCurriculum(curriculum);
+    setRole(role);
+    setUser(user);
+    setAction(action);
+    setTransformedCurriculum(transformedCurriculum);
+    setToken(token);
+  };
+  
+  const showAuthorizationError = () => {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'You are not authorized to view this page',
+    });
+    setTimeout(() => {
+      // Redirect to home
+    }, 3000);
+  };
   
   useEffect(() => {
-    async function checkParams() {
+    const checkParams = async () => {
       const id = queryParams.get('id');
       const type = queryParams.get('type');
-     const edit = queryParams.get('edit');
-      if (id && type) {
-        if(type === 'view'){
-          setShowView(true);
-          
-          return;
-        }
-        if(edit === 'true'){
-          setEditView(true);
-          return;
-        }
+      const edit = queryParams.get('edit');
+      const user = queryParams.get('user');
+      const role = queryParams.get('role');
+      const action = queryParams.get('action');
+      const transformedCurriculum = queryParams.get('transformedCurriculum');
+      const token = queryParams.get('token');
 
-        setLoadPage(true);
-        try {
-          const user = queryParams.get('user');
-          const role = queryParams.get('role');
-          const action = queryParams.get('action');
-          const transformedCurriculum = queryParams.get('transformedCurriculum');
-          const token = queryParams.get('token');
-          const loggedInUser = await fetch(`http://64.4.160.24:1337/api/users/me`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json', 
-            'Authorization': `Bearer ${token}`
-        }});
-        const userFromStrapi = await loggedInUser.json();
-        console.log(userFromStrapi);
-        if (userFromStrapi.id === parseInt(user)) {
-          const curriculum1 = JSON.parse(transformedCurriculum);
-          console.log(curriculum1);
-          setCurriculum(curriculum1);
-          setRole(role);
-          setUser(userFromStrapi);
-          setAction(action);
-          setTransformedCurriculum(transformedCurriculum);
-          setToken(token);
-        }else{
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'You are not authorized to view this page',
-          })
-          setTimeout(() => {
-            //window.location.href = 'http://localhost:3000/';
-            //window.location.replace('http://localhost:3000/');
-          }, 3000);
-        }
-        } catch (error) {
-          console.log(error);
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'You are not authorized to view this page',
-          })
-          setTimeout(() => {
-            //window.location.href = 'http://localhost:3000/';
-            //window.location.replace('http://localhost:3000/');
-          }, 3000);
-        }
-      }else{
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'You are not authorized to view this page',
-        })
-        setTimeout(() => {
-          //window.location.href = 'http://localhost:3000/';
-          //window.location.replace('http://localhost:3000/');
-        }, 3000);
+      console.log('id', id)
+      console.log('type', type)
+      console.log('edit', edit)
+      console.log('user', user)
+      console.log('role', role)
+      console.log('action', action)
+      console.log('transformedCurriculum', transformedCurriculum)
+      console.log('curriculum', JSON.parse(transformedCurriculum))
+  
+      if (!id || !type) {
+        showAuthorizationError();
+        return;
       }
-    }
-    if(queryParams){
+  
+      if (type === 'view') {
+        setShowView(true);
+        return;
+      }
+      if (edit === 'true') {
+        setEditView(true);
+        return;
+      }
+  
+      setLoadPage(true);
+      await handleAuthorization(token, role, transformedCurriculum, action, id);
+    };
+  
+    if (queryParams) {
       checkParams();
     }
-  }, [queryParams]);
+  }, [queryParams]); // Ensure correct dependencies are listed
+  
   const getFonts = useCallback((query: GetFontQuery) => {
     const buildParams = (data: Record<string, string | string[]>) => {
       const params = new URLSearchParams();
@@ -237,7 +271,8 @@ const Test = () => {
               background: 'white',
             }}
           >
-            {curriculum && <Sidebar curriculum={curriculum[0]}/> }
+            {curriculum ? <Sidebar curriculum={curriculum[0]}/>:<Sidebar curriculum={null}/> }
+            
           </div>
           <div
             css={{
@@ -282,5 +317,7 @@ const Test = () => {
     </ErrorBoundary>
   );
 };
+
+
 
 export default Test;
