@@ -131,8 +131,8 @@ const Test = () => {
       console.log('user', user)
       console.log('role', role)
       console.log('action', action)
-      console.log('transformedCurriculum', transformedCurriculum)
-      console.log('curriculum', JSON.parse(transformedCurriculum))
+      //console.log('transformedCurriculum', transformedCurriculum)
+      //console.log('curriculum', JSON.parse(transformedCurriculum))
   
       if (!id || !type) {
         showAuthorizationError();
@@ -196,7 +196,7 @@ const Test = () => {
         title: 'Oops...',
         text: `An error occured: ${error.message}. Check if you logged in to CourScribe and try again from the curriculum in CourScribe. If the problem persists, contact support at support@courscribe.com.`,
       })
-      window.location.replace('http://localhost:3000/');
+      //window.location.replace('http://localhost:3000/');
     }}
     >
     

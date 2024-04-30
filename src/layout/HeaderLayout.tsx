@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import { downloadObjectAsJson } from '../utils/download';
 import { set } from 'lodash';
-
+import Swal from 'sweetalert2';
 
 interface HeaderLayoutProps {
   openPreview: () => void;
@@ -489,26 +489,34 @@ const HeaderLayout: ForwardRefRenderFunction<
    }
   };
   const getData = async () => {
-    const res = await fetch(`http://64.4.160.24:1337/api/curriculums/${curriculumId}`, {
+    try {
+      const res = await fetch(`http://64.4.160.24:1337/api/curriculums/${curriculumId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + process.env.TOKEN_KEY,
       },
-    });
-    const data = await res.json();
-    console.log('curriculum data from strapi', data)
-    if(data){
-      const slides = data.data.attributes.slides;
-      if(slides){
-      actions.setData(slides);
+      });
+      const data = await res.json();
+      console.log('curriculum data from strapi', data)
+      if(data){
+        const slides = data?.data?.attributes?.slides;
+        if(slides){
+        actions.setData(slides);
+        }
       }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: error.message,
+      });
     }
     
   
   }
   useEffect(()=>{
-    actions.setData(courscribeSampleData);
+    //actions.setData(courscribeSampleData);
     if(showView){
     getData();
     }
